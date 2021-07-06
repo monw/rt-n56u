@@ -390,6 +390,7 @@ static void option_instat_callback(struct urb *urb);
  * It seems to contain a Qualcomm QSC6240/6290 chipset            */
 #define FOUR_G_SYSTEMS_PRODUCT_W14		0x9603
 #define FOUR_G_SYSTEMS_PRODUCT_W100		0x9b01
+#define LONGCHEER_U9300_PRODUCT_ID              0x9b3c
 
 /* iBall 3.5G connect wireless modem */
 #define IBALL_3_5G_CONNECT			0x9605
@@ -1228,7 +1229,7 @@ static const struct usb_device_id option_ids[] = {
 	  .driver_info = (kernel_ulong_t)&net_intf4_blacklist },
 	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EC25),
 	  .driver_info = (kernel_ulong_t)&net_intf4_blacklist },
-	{ USB_DEVICE_AND_INTERFACE_INFO(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EC200T, 0xff, 0, 0) },
+	{ USB_DEVICE_AND_INTERFACE_INFO(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EC200T, 0xff, 0xff, 0xff) },
 	{ USB_DEVICE_INTERFACE_CLASS(QUALCOMM_VENDOR_ID, 0x9201, 0xff),
 	  .driver_info = (kernel_ulong_t)&net_intf3_blacklist }, /* TS-UM6602 */
 	{ USB_DEVICE_INTERFACE_CLASS(SIERRA_VENDOR_ID, 0x68c0, 0xff),
@@ -1940,6 +1941,9 @@ static const struct usb_device_id option_ids[] = {
 	{ USB_DEVICE(LONGCHEER_VENDOR_ID, ZOOM_PRODUCT_4597) },
 	{ USB_DEVICE(LONGCHEER_VENDOR_ID, IBALL_3_5G_CONNECT) },
 	{ USB_DEVICE(LONGCHEER_VENDOR_ID, 0x9b05) },/*U8300*/
+	{ USB_DEVICE(LONGCHEER_VENDOR_ID, LONGCHEER_U9300_PRODUCT_ID),
+  	  .driver_info = (kernel_ulong_t)&net_intf4_blacklist
+  	},   /*U9300*/
 	{ USB_DEVICE(HAIER_VENDOR_ID, HAIER_PRODUCT_CE100) },
 	{ USB_DEVICE_AND_INTERFACE_INFO(HAIER_VENDOR_ID, HAIER_PRODUCT_CE81B, 0xff, 0xff, 0xff) },
 	{ USB_DEVICE(HAIER_VENDOR_ID, HAIER_PRODUCT_CE682) },
@@ -2343,4 +2347,3 @@ static int option_send_setup(struct usb_serial_port *port)
 MODULE_AUTHOR(DRIVER_AUTHOR);
 MODULE_DESCRIPTION(DRIVER_DESC);
 MODULE_LICENSE("GPL");
-
