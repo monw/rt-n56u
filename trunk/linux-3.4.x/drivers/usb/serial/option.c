@@ -2213,6 +2213,12 @@ static int option_probe(struct usb_serial *serial,
 		dev_desc->idProduct == cpu_to_le16(SAMSUNG_PRODUCT_GT_B3730) &&
 		iface_desc->bInterfaceClass != USB_CLASS_CDC_DATA)
 		return -ENODEV;
+	 if (serial->dev->descriptor.idVendor == cpu_to_le16(0x2C7C)) {
+               __u16 idProduct = le16_to_cpu(serial->dev->descriptor.idProduct);
+               //Quectel EC200T's interface 0 can be used as USB Network device (ecm, rndis)
+               if (serial->interface->cur_altsetting->desc.bInterfaceClass != 0xFF) 
+		       return -ENODEV;
+	 }
 
 	data = kzalloc(sizeof(struct usb_wwan_intf_private), GFP_KERNEL);
 	if (!data)
