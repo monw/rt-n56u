@@ -18,6 +18,9 @@ extract_test:
 		tar xf $(SRC_NAME).tar.gz ; \
 		patch -d $(SRC_NAME) -p1 -i ../0002-remove-pie.patch; \
 		patch -d $(SRC_NAME) -p1 -i ../010-auxv.patch; \
+		patch -d $(SRC_NAME) -p1 -i ../0004-accept-external-linker-flags.patch; \
+		patch -d $(SRC_NAME) -p1 -i ../0005-link-natpmp.patch; \
+		patch -d $(SRC_NAME) -p1 -i ../0007-add-cerrno-header-for-str-errno.patch; \
 	fi )
 config_test:
 
