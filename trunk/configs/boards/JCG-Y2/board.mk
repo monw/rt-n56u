@@ -4,5 +4,5 @@
 # Y2        # Y2               # MT7621  #
 ##################################################################
 
-CFLAGS += -DBOARD_Y2 -DBOARD_MT7615_DBDC
-BOARD_NUM_USB_PORTS=1
+CFLAGS += -DBOARD_Y2 -DBOARD_MT7915_DBDC
+BOARD_NUM_USB_PORTS=0
