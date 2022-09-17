@@ -235,14 +235,6 @@ stop_udpxy(void)
 }
 
 void
-stop_udpxy(void)
-{
-	char* svcs[] = { "udpxy", NULL };
-
-	kill_services(svcs, 3, 1);
-}
-
-void
 start_udpxy(char *wan_ifname)
 {
 	int port = nvram_get_int("udpxy_enable_x");
