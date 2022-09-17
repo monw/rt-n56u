@@ -1,0 +1,11 @@
+INDEX1=MT7615
+INDEX1_profile_path=/etc/Wireless/iNIC/iNIC_ap.dat
+INDEX1_EEPROM_offset=0x8000
+INDEX1_EEPROM_size=0x4000
+INDEX1_EEPROM_name=e2p
+INDEX1_main_ifname=rai0
+INDEX1_ext_ifname=rai
+INDEX1_wds_ifname=wdsi
+INDEX1_apcli_ifname=apclii
+INDEX1_single_sku_path=/etc_ro/Wireless/SingleSKU_mt7615e-sku.dat
+INDEX1_bf_sku_path=/etc_ro/Wireless/SingleSKU_mt7615e-sku-bf.dat
