@@ -9,8 +9,9 @@ all: download_test config_test
 download_test:
 	( if [ ! -d $(THISDIR)/$(SRC_NAME) ]; then \
 		git clone https://github.com/monw/msd_lite.git ; \
-		cd $(SRC_NAME) ; \
-		##git submodule update --init --recursive ; \
+		cd $(SRC_NAME)/src ; \
+		git clone https://github.com/rozhuk-im/liblcb ; \
+cd .. ;
 		##patch -p1 -i ../msd_lite.diff ; \
 	fi )
 
