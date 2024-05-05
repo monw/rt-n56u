@@ -11,7 +11,7 @@ download_test:
 		git clone https://github.com/monw/msd_lite.git ; \
 		cd $(SRC_NAME)/src ; \
 		git clone https://github.com/rozhuk-im/liblcb ; \
-cd .. ;
+  cd $(SRC_NAME) ; \
 		##patch -p1 -i ../msd_lite.diff ; \
 	fi )
 
