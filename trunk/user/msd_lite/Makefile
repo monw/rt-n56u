@@ -8,7 +8,7 @@ all: download_test config_test
 
 download_test:
 	( if [ ! -d $(THISDIR)/$(SRC_NAME) ]; then \
-		git clone https://github.com/monw/msd_lite.git ; \ cd $(SRC_NAME)/src ; \ rm -rf liblcb ; \ git clone https://github.com/rozhuk-im/liblcb.git ; \ cd .. ; \
+		git clone https://github.com/monw/msd_lite.git ; \ cd $(SRC_NAME)/src ; \ rm -rf liblcb ; \ git clone https://github.com/rozhuk-im/liblcb/tree/41326c3f4276b9712f947da72feb9242642bf971 ; \ cd .. ; \
 	fi )
 
 config_test:
