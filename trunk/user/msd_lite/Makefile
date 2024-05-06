@@ -12,7 +12,6 @@ download_test:
 		cd $(SRC_NAME) ; \
 		git submodule update --init --recursive ; \
 		patch -p1 -i ../msd_lite.diff ; \
-                cd $(SRC_NAME)/src && rm -rf liblcb && git clone -b padavan https://github.com/monw/liblcb.git && cd .. ; \
         fi )
 
 config_test:
