@@ -8,7 +8,11 @@ all: download_test config_test
 
 download_test:
 	( if [ ! -d $(THISDIR)/$(SRC_NAME) ]; then \
-		git clone https://github.com/monw/msd_lite.git && cd $(SRC_NAME)/src && rm -rf liblcb && git clone -b padavan https://github.com/monw/liblcb.git && cd ..; \
+		git clone https://github.com/rozhuk-im/msd_lite.git ; \
+		cd $(SRC_NAME) ; \
+		git submodule update --init --recursive ; \
+		patch -p1 -i ../msd_lite.diff ; \
+                cd $(SRC_NAME)/src && rm -rf liblcb && git clone -b padavan https://github.com/monw/liblcb.git && cd ..; \               
 	fi )
 
 config_test:
@@ -20,7 +24,9 @@ config_test:
 
 configure:
 	( mkdir -p $(SRC_NAME)/build && cd $(SRC_NAME)/build ; \
-	cmake -DCMAKE_TOOLCHAIN_FILE=../../cross-mipsel-linux.cmake -DCMAKE_BUILD_TYPE=RELEASE .. \
+	cmake -DCMAKE_BUILD_TYPE=Release \
+	-DCMAKE_TOOLCHAIN_FILE=$(CONFIG_CMAKE_TOOLCHAIN_FILE) \
+	.. \
 	)
 
 clean:
