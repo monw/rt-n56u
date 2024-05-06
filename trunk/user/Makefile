@@ -200,8 +200,8 @@ dir_$(CONFIG_FIRMWARE_INCLUDE_NFSD)		+= nfs-utils
 ifneq (,$(filter y,$(CONFIG_FIRMWARE_INCLUDE_NFSD) $(CONFIG_FIRMWARE_INCLUDE_NFSC)))
 dir_y						+= rpcbind
 endif
-dir_y						+= optware
-dir_y						+= util-linux
+#dir_y						+= optware
+#dir_y						+= util-linux
 dir_$(FS_EXT_ENABLED)				+= e2fsprogs
 dir_$(FS_FAT_ENABLED)				+= dosfstools
 dir_$(FS_NTFS_ENABLED)				+= ntfs-3g
